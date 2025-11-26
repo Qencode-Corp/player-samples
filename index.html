@@ -22,7 +22,7 @@
 <script>
   // https://docs.qencode.com/tutorials/video-player/basic-usage/
   const params = new URLSearchParams(location.search);
-  const videoSrc = params.get('video');
+  const videoSrc = params.get('v');
 
   if (videoSrc) {
     qPlayer('player', {
@@ -33,7 +33,7 @@
       })
   } else {
     const errorMessage = document.createElement('p');
-    errorMessage.textContent = 'Please provide a valid URL in query parameter "video"';
+    errorMessage.textContent = 'Please provide a valid URL in query parameter "v"';
     document.body.appendChild(errorMessage);
   }
 
