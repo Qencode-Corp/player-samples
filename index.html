@@ -15,12 +15,19 @@
   const params = new URLSearchParams(location.search);
   const videoSrc = params.get('video');
 
-  qPlayer('player', {
+  if (videoSrc) {
+    qPlayer('player', {
     licenseKey: '<INSERT KEY HERE>',
-    videoSources: {
-      src: videoSrc,
-    }
-  })
+      videoSources: {
+        src: videoSrc,
+      }
+    })
+  } else {
+    const errorMessage = document.createElement('p');
+    errorMessage.textContent = 'Please provide a valid URL in query parameter "video"';
+    document.body.appendChild(errorMessage);
+  }
+
 </script>
 </body>
 </html>
