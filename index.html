@@ -11,7 +11,7 @@
 <script>
   // https://docs.qencode.com/tutorials/video-player/basic-usage/
   const params = new URLSearchParams(location.search);
-  const videoSrc = params.get('video');
+  const videoSrc = params.get('v');
 
   if (videoSrc) {
     qPlayer('player', {
