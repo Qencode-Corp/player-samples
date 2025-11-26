@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Player Example</title>
+  <style>
+
+  </style>
+</head>
+<body>
+<script src='https://player-static.qencode.com/release/qencode-bootstrapper.min.js'></script>
+<div id='player'></div>
+<script>
+  const params = new URLSearchParams(location.search);
+  const videoSrc = params.get('video');
+
+  qPlayer('player', {
+    licenseKey: '<INSERT KEY HERE>',
+    videoSources: {
+      src: videoSrc,
+    }
+  })
+</script>
+</body>
+</html>
