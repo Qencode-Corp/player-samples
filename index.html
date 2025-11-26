@@ -12,16 +12,17 @@
 <script src='https://player-static.qencode.com/release/qencode-bootstrapper.min.js'></script>
 <div id='player'></div>
 <script>
+  // https://docs.qencode.com/tutorials/video-player/basic-usage/
   const params = new URLSearchParams(location.search);
   const videoSrc = params.get('video');
 
   if (videoSrc) {
     qPlayer('player', {
-    licenseKey: '<INSERT KEY HERE>',
-      videoSources: {
-        src: videoSrc,
-      }
-    })
+      licenseKey: '<INSERT KEY HERE>',
+        videoSources: {
+          src: videoSrc,
+        }
+      })
   } else {
     const errorMessage = document.createElement('p');
     errorMessage.textContent = 'Please provide a valid URL in query parameter "video"';
